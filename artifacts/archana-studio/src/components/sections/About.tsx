@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutImg from "@assets/download_1779520769815.jpg";
+import aboutImg from "@assets/3_1779522545874.jpg";
 
 export default function About() {
   return (
