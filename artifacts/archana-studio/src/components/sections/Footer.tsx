@@ -1,4 +1,4 @@
-import logoImg from "@assets/AS_Logo-Photoroom_1779522245690.png";
+import logoImg from "@assets/AS_Logo-Photoroom_1779523342452.png";
 
 export default function Footer() {
   return (
