@@ -1,0 +1,104 @@
+```text
+Create a premium luxury photography and videography business website for a brand named "Archana Digital Studio".
+
+Business Type:
+Photography, Videography, Wedding Shoots, Cinematic Reels, Events, Digital Studio Services.
+
+Theme & Style:
+- Luxury black and gold color palette
+- Modern premium UI
+- Elegant cinematic feel
+- Professional business aesthetic
+- Smooth animations and transitions
+- High-end visual presentation
+- Clean spacing and glassmorphism effects
+- Premium typography
+
+Website Sections:
+
+1. Hero Section
+- Fullscreen cinematic hero banner
+- Add elegant headline:
+  "Capturing Moments, Creating Memories"
+- Premium CTA buttons:
+  "View Portfolio"
+  "Book Now"
+- Add smooth scroll animation
+- Add subtle gold glow effects
+
+2. About Section
+- Introduce Archana Digital Studio
+- Mention expertise in photography and videography
+- Elegant business presentation with luxury cards
+
+3. Services Section
+Include premium service cards:
+- Wedding Photography
+- Cinematic Videography
+- Pre-Wedding Shoots
+- Event Coverage
+- Studio Photography
+- Reel & Social Media Shoots
+
+Add hover animations and gold accent borders.
+
+4. Portfolio/Gallery Section
+- Create modern masonry/grid gallery
+- Use uploaded client photos
+- Add cinematic hover zoom effect
+- Premium image transitions
+- Dark overlay with gold accents
+
+5. Featured Video Section
+- Add uploaded video showcase
+- Cinematic video preview section
+- Modern rounded player UI
+- Add glowing play button animation
+
+6. Testimonials Section
+- Luxury testimonial cards
+- Smooth slider animation
+- Elegant typography
+
+7. Pricing Section
+- Premium pricing cards
+- Gold highlighted featured package
+- Smooth hover animations
+
+8. Contact Section
+Include:
+- Contact form
+- WhatsApp chat button
+- Call button
+- Google Maps placeholder
+- Social media icons
+
+9. Footer
+- Elegant black/gold footer
+- Studio branding
+- Quick links
+- Copyright section
+
+Technical Requirements:
+- Fully responsive for mobile/tablet/desktop
+- Smooth scrolling
+- Fast loading optimized UI
+- Professional animations
+- Modern navbar with scroll effect
+- Sticky navigation
+- Premium loading animation
+- Floating WhatsApp support button
+
+Extra Design Instructions:
+- Use cinematic gradients
+- Add subtle gold particles/light effects
+- Keep design classy and premium, not flashy
+- Avoid cluttered layouts
+- Focus on luxury studio branding
+- Use modern card layouts and premium shadows
+
+Assets:
+- Use uploaded logo
+- Use uploaded photography images
+- Use uploaded video in featured showcase section
+```

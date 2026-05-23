@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Archana Digital Studio"
+version = "1.0.0"
+id = "artifacts/archana-studio"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18906
+
+[services.development]
+run = "pnpm --filter @workspace/archana-studio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/archana-studio", "run", "build" ]
+publicDir = "artifacts/archana-studio/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18906"
+BASE_PATH = "/"

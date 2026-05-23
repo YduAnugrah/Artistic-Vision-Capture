@@ -1,0 +1,50 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "YyzUxSV6BMnYrpG9ktQLb"
+uri = "file://artifacts/archana-studio/public/portfolio-1.png"
+type = "image"
+title = "Wedding couple cinematic shot"
+
+[[generated]]
+id = "9dVxBrmMrQ6smGz5r8cvL"
+uri = "file://artifacts/archana-studio/public/portfolio-2.png"
+type = "image"
+title = "Golden hour portrait"
+
+[[generated]]
+id = "qpux2Pr2ouvGfpbZC6M0I"
+uri = "file://artifacts/archana-studio/public/portfolio-3.png"
+type = "image"
+title = "Cinematic event coverage"
+
+[[generated]]
+id = "sxo0ax2f8tkK7z2FN1eD2"
+uri = "file://artifacts/archana-studio/public/portfolio-4.png"
+type = "image"
+title = "Bridal cinematic portrait"
+
+[[generated]]
+id = "nlvpjzXGlAHfJ_dy1aGj4"
+uri = "file://artifacts/archana-studio/public/portfolio-5.png"
+type = "image"
+title = "Pre-wedding outdoor shoot"
+
+[[generated]]
+id = "sU9COLzYfLpWNf_rfGfXG"
+uri = "file://artifacts/archana-studio/public/portfolio-6.png"
+type = "image"
+title = "Luxury wedding details"
+
+[[generated]]
+id = "Z_rinPaF-QpTrZal8DZIr"
+uri = "file://artifacts/archana-studio/public/portfolio-7.png"
+type = "image"
+title = "Groom getting ready"
+
+[[generated]]
+id = "IIvz_uTmRT-4nWPKBrsVM"
+uri = "file://artifacts/archana-studio/public/portfolio-8.png"
+type = "image"
+title = "Cinematic evening reception"
