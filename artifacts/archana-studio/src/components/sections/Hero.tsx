@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroBg from "@assets/4_1779520468158.jpg";
 import logoImg from "@assets/AS_Logo_1779520468154.png";
 
 export default function Hero() {
@@ -12,72 +11,208 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
-      {/* Background layer */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-60 z-0" />
-        
-        {/* Cinematic hero background photo */}
-        <img
-          src={heroBg}
-          alt="Cinematic couple portrait"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        
-        {/* Animated Particles (CSS representation) */}
-        <div className="absolute inset-0 opacity-30 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0iI2Q0YWYzNyIvPjwvc3ZnPg==')] animate-[pulse_4s_ease-in-out_infinite]" />
+    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#050505]">
+
+      {/* Deep radial gold glow — center */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.12)_0%,_transparent_70%)]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.05)_0%,_transparent_60%)]" />
       </div>
 
-      <div className="container relative z-20 mx-auto px-6 text-center max-w-4xl pt-20">
+      {/* Top-left corner accent */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.3 }}
+        className="absolute top-16 left-16 z-10 pointer-events-none hidden md:block"
+      >
+        <div className="w-20 h-20 border-t border-l border-primary/40" />
+      </motion.div>
+
+      {/* Top-right corner accent */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.3 }}
+        className="absolute top-16 right-16 z-10 pointer-events-none hidden md:block"
+      >
+        <div className="w-20 h-20 border-t border-r border-primary/40" />
+      </motion.div>
+
+      {/* Bottom-left corner accent */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className="absolute bottom-16 left-16 z-10 pointer-events-none hidden md:block"
+      >
+        <div className="w-20 h-20 border-b border-l border-primary/40" />
+      </motion.div>
+
+      {/* Bottom-right corner accent */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className="absolute bottom-16 right-16 z-10 pointer-events-none hidden md:block"
+      >
+        <div className="w-20 h-20 border-b border-r border-primary/40" />
+      </motion.div>
+
+      {/* Horizontal rule top */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.2, delay: 0.8 }}
+        className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent origin-center z-10"
+      />
+
+      {/* Horizontal rule bottom */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.2, delay: 0.8 }}
+        className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent origin-center z-10"
+      />
+
+      {/* Vertical rule left */}
+      <motion.div
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 1.4, delay: 1 }}
+        className="absolute top-0 bottom-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-primary/20 to-transparent origin-top z-10 hidden md:block"
+      />
+
+      {/* Vertical rule right */}
+      <motion.div
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 1.4, delay: 1 }}
+        className="absolute top-0 bottom-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-primary/20 to-transparent origin-top z-10 hidden md:block"
+      />
+
+      {/* Floating gold dots */}
+      {[...Array(6)].map((_, i) => (
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          key={i}
+          className="absolute w-1 h-1 rounded-full bg-primary/50 z-10"
+          style={{
+            left: `${15 + i * 14}%`,
+            top: `${20 + (i % 3) * 25}%`,
+          }}
+          animate={{ opacity: [0.2, 0.8, 0.2], y: [0, -10, 0] }}
+          transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.4 }}
+        />
+      ))}
+
+      {/* Main content */}
+      <div className="container relative z-20 mx-auto px-6 text-center max-w-5xl pt-20">
+
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="flex justify-center mb-8"
         >
-          <span className="text-primary font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-6 block">
-            Archana Digital Studio
+          <img
+            src={logoImg}
+            alt="Archana Digital Studio"
+            className="h-20 md:h-24 w-auto object-contain"
+            style={{ filter: "drop-shadow(0 0 20px rgba(212,175,55,0.3))" }}
+          />
+        </motion.div>
+
+        {/* Divider line with diamonds */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex items-center justify-center gap-3 mb-10"
+        >
+          <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-primary/60" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-primary" />
+          <div className="w-2 h-2 rotate-45 border border-primary" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-primary" />
+          <div className="h-[1px] w-24 bg-gradient-to-l from-transparent to-primary/60" />
+        </motion.div>
+
+        {/* Studio tag */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <span className="text-primary font-medium tracking-[0.35em] uppercase text-xs md:text-sm mb-6 block">
+            Premium Photography & Videography
           </span>
         </motion.div>
-        
+
+        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-foreground leading-[1.1] mb-6"
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-foreground leading-[1.1] mb-4"
         >
-          Capturing Moments,<br />
-          <span className="text-gradient-gold italic font-light">Creating Memories</span>
+          Capturing Moments,
         </motion.h1>
 
-        <motion.p
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="text-lg md:text-xl text-muted-foreground font-light mb-12 max-w-2xl mx-auto leading-relaxed"
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-serif italic font-light mb-8"
+          style={{
+            background: "linear-gradient(135deg, #d4af37 0%, #f5e27d 40%, #c8961f 70%, #d4af37 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
         >
-          Elevating life's most important occasions into cinematic masterpieces. 
+          Creating Memories
+        </motion.h1>
+
+        {/* Bottom divider */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex items-center justify-center gap-3 mb-10"
+        >
+          <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-primary/40" />
+          <div className="w-1 h-1 rotate-45 bg-primary/60" />
+          <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-primary/40" />
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.65 }}
+          className="text-base md:text-lg text-muted-foreground font-light mb-14 max-w-xl mx-auto leading-relaxed tracking-wide"
+        >
+          Elevating life's most important occasions into cinematic masterpieces.
           Premium photography and videography for those who refuse to settle for ordinary.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.75 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             onClick={() => scrollTo("#portfolio")}
-            className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-8 py-6 text-lg tracking-wide uppercase gold-glow"
+            className="w-full sm:w-auto bg-primary text-black hover:bg-primary/90 rounded-none px-10 py-6 text-sm tracking-[0.2em] uppercase font-bold gold-glow"
           >
             View Portfolio
           </Button>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             variant="outline"
             onClick={() => scrollTo("#contact")}
-            className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10 rounded-none px-8 py-6 text-lg tracking-wide uppercase transition-all duration-300"
+            className="w-full sm:w-auto border border-primary/50 text-primary hover:bg-primary/10 hover:border-primary rounded-none px-10 py-6 text-sm tracking-[0.2em] uppercase transition-all duration-300"
           >
             Book Now
           </Button>
@@ -85,16 +220,16 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
+        transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer"
         onClick={() => scrollTo("#about")}
       >
         <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Scroll</span>
-        <div className="w-[1px] h-12 bg-muted-foreground/30 relative overflow-hidden">
-          <motion.div 
+        <div className="w-[1px] h-12 bg-muted-foreground/20 relative overflow-hidden">
+          <motion.div
             className="absolute top-0 left-0 w-full h-1/2 bg-primary"
             animate={{ y: ["0%", "200%"] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
