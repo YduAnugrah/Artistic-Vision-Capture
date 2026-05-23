@@ -43,7 +43,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-foreground uppercase tracking-wider text-sm mb-1">Direct Line</h4>
-                  <p className="text-muted-foreground font-light">+91 98765 43210</p>
+                  <p className="text-muted-foreground font-light">+07947133944</p>
                 </div>
               </div>
 
@@ -53,7 +53,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-foreground uppercase tracking-wider text-sm mb-1">Email</h4>
-                  <p className="text-muted-foreground font-light">hello@archanastudio.com</p>
+                  <p className="text-muted-foreground font-light">thearchanastudio@gmail.com</p>
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-foreground uppercase tracking-wider text-sm mb-1">Atelier</h4>
-                  <p className="text-muted-foreground font-light">123 Luxury Avenue, Studio District<br />Mumbai, MH 400001</p>
+                  <p className="text-muted-foreground font-light">Shop No Rz-A65, Palam Road<br />Palam Village, Delhi - 110045</p>
                 </div>
               </div>
             </div>
