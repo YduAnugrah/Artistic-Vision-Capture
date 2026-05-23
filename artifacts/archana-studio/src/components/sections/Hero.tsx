@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import heroBg from "@assets/4_1779520468158.jpg";
+import logoImg from "@assets/AS_Logo_1779520468154.png";
 
 export default function Hero() {
   const scrollTo = (href: string) => {
@@ -16,8 +18,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-60 z-0" />
         
-        {/* Placeholder dark texture - could be a video or image but using CSS for reliability/luxury feel */}
-        <div className="absolute inset-0 bg-[#050505]" />
+        {/* Cinematic hero background photo */}
+        <img
+          src={heroBg}
+          alt="Cinematic couple portrait"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
         
         {/* Animated Particles (CSS representation) */}
         <div className="absolute inset-0 opacity-30 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0iI2Q0YWYzNyIvPjwvc3ZnPg==')] animate-[pulse_4s_ease-in-out_infinite]" />

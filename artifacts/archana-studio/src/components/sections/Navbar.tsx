@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImg from "@assets/AS_Logo_1779520468154.png";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -41,12 +42,17 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           onClick={(e) => { e.preventDefault(); scrollTo("#home"); }}
-          className="text-2xl font-serif font-bold text-gradient-gold tracking-wider z-50 relative"
+          className="z-50 relative flex items-center"
+          data-testid="link-logo"
         >
-          Archana Studio
+          <img
+            src={logoImg}
+            alt="Archana Digital Studio"
+            className="h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Nav */}
