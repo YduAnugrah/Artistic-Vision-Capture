@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import aboutImg from "@assets/download_1779520769815.jpg";
 
 export default function About() {
   return (
@@ -15,7 +16,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] overflow-hidden relative">
               <img 
-                src="/portfolio-2.png" 
+                src={aboutImg} 
                 alt="Golden hour portrait" 
                 className="w-full h-full object-cover filter grayscale-[20%] hover:grayscale-0 transition-all duration-700"
               />
