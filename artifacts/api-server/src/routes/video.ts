@@ -5,7 +5,8 @@ import path from "path";
 const router: IRouter = Router();
 
 const VIDEO_PATH = path.resolve(
-  process.cwd(),
+  __dirname,
+  "..",
   "..",
   "..",
   "attached_assets",
