@@ -70,7 +70,7 @@ export default function FeaturedVideo() {
             {/* Actual video */}
             <video
               ref={videoRef}
-              src="/featured-video.mp4"
+              src={`${import.meta.env.BASE_URL}featured-video.mp4`}
               className="w-full h-full object-cover"
               preload="metadata"
               playsInline
