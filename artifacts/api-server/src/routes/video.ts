@@ -6,6 +6,8 @@ const router: IRouter = Router();
 
 const VIDEO_PATH = path.resolve(
   process.cwd(),
+  "..",
+  "..",
   "attached_assets",
   "Best_Ring_Ceremony_2020_highlight_PRATEEK_+_KANIKA_BY_RAHUL_SI_1779523086465.mp4"
 );
