@@ -159,7 +159,7 @@ export default function Contact() {
                     required
                     name="name"
                     className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50"
-                    placeholder="John & Jane"
+                    placeholder="Hemant Singh"
                   />
                 </div>
                 <div className="space-y-2">
