@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Youtube } from "lucide-react";
 
-const YOUTUBE_VIDEO_ID = "PLACEHOLDER";
+const YOUTUBE_VIDEO_ID = "9Og5tHF9SHE";
 
 function getYouTubeId(url: string): string {
   const match = url.match(
