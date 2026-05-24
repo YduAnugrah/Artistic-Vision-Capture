@@ -24,15 +24,17 @@ export default function Contact() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    formData.append("access_key", "38a41153-4d27-4999-a6c7-dbde7d6f1c33");
+
+    const body = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
       });
-      const data = await response.json();
-      if (response.ok) {
+      const data = await response.json() as { success: boolean; message?: string };
+      if (response.ok && data.success) {
         setStatus("success");
         form.reset();
       } else {
