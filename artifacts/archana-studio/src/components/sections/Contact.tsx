@@ -7,14 +7,37 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setStatus("idle");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", "38a41153-4d27-4999-a6c7-dbde7d6f1c33");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
+    } finally {
       setLoading(false);
-      alert("Inquiry sent successfully. We will contact you soon.");
-    }, 1500);
+    }
   };
 
   return (
@@ -91,29 +114,40 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs uppercase tracking-wider text-muted-foreground">Full Name</label>
-                  <Input required className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50" placeholder="John & Jane" />
+                  <Input required name="name" className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50" placeholder="John & Jane" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs uppercase tracking-wider text-muted-foreground">Phone</label>
-                  <Input required type="tel" className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50" placeholder="+91" />
+                  <Input required name="phone" type="tel" className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50" placeholder="+91" />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs uppercase tracking-wider text-muted-foreground">Email</label>
-                  <Input required type="email" className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50" placeholder="hello@example.com" />
+                  <Input required name="email" type="email" className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50" placeholder="hello@example.com" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs uppercase tracking-wider text-muted-foreground">Event Date</label>
-                  <Input type="date" className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50 text-foreground" />
+                  <Input name="event_date" type="date" className="bg-black/50 border-white/10 rounded-none h-12 focus-visible:ring-primary/50 text-foreground" />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">Event Type / Details</label>
-                <Textarea required className="bg-black/50 border-white/10 rounded-none min-h-[120px] focus-visible:ring-primary/50" placeholder="Tell us about your vision..." />
+                <Textarea required name="message" className="bg-black/50 border-white/10 rounded-none min-h-[120px] focus-visible:ring-primary/50" placeholder="Tell us about your vision..." />
               </div>
+
+              {status === "success" && (
+                <div className="border border-primary/40 bg-primary/5 px-5 py-4 text-sm text-primary tracking-wide">
+                  ✦ Your inquiry has been sent. We will be in touch shortly.
+                </div>
+              )}
+              {status === "error" && (
+                <div className="border border-red-500/40 bg-red-500/5 px-5 py-4 text-sm text-red-400 tracking-wide">
+                  {errorMsg}
+                </div>
+              )}
 
               <Button 
                 type="submit" 
